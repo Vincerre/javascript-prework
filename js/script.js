@@ -3,7 +3,7 @@ function playGame(playerInput){
 
   let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  function getMoveName(randomNumber){
+  function getMoveName(randomNumber, playerInput){
     if(randomNumber == 1){
       return 'kamień';
     } else if(randomNumber == 2){
@@ -11,9 +11,6 @@ function playGame(playerInput){
     } else if(randomNumber == 3){
       return 'nożyce';
     }
-  }
-
-  function getMoveName(playerInput){
     if(playerInput == 1){
       return 'kamień';
     } else if(playerInput == 2){
