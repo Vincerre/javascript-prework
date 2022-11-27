@@ -1,9 +1,9 @@
 function playGame(playerInput){
   clearMessages();
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  function getMoveName(randomNumber, playerInput){
+  const getMoveName = function (randomNumber, playerInput){
     if(randomNumber == 1){
       return 'kamień';
     } else if(randomNumber == 2){
@@ -23,13 +23,12 @@ function playGame(playerInput){
     }
   }
 
-  let argComputerMove = getMoveName(randomNumber);
-  let argPlayerMove = getMoveName(playerInput);
+  const argComputerMove = getMoveName(randomNumber),
+        argPlayerMove = getMoveName(playerInput);
 
 
-  function displayResult(argComputerMove, argPlayerMove){
+  const displayResult = function (argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-
     if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
       printMessage('Ty wygrywasz!');
     }
@@ -38,7 +37,8 @@ function playGame(playerInput){
     } 
     else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
       printMessage('Ty wygrywasz!');
-    } else if( argComputerMove == argPlayerMove ){
+    }
+    else if( argComputerMove == argPlayerMove ){
       printMessage('Remis');
     }else{
       printMessage('Tym razem przegrywasz.');
