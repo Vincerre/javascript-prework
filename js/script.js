@@ -3,29 +3,18 @@ function playGame(playerInput){
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  const getMoveName = function (randomNumber, playerInput){
-    if(randomNumber == 1){
+  const getMoveName = function (moveNumber){
+   
+    if(moveNumber == 1){
       return 'kamień';
-    } else if(randomNumber == 2){
+    } else if(moveNumber == 2){
       return 'papier';
-    } else if(randomNumber == 3){
+    } else if(moveNumber == 3){
       return 'nożyce';
-    }
-    if(playerInput == 1){
-      return 'kamień';
-    } else if(playerInput == 2){
-      return 'papier';
-    } else if(playerInput == 3){
-      return 'nożyce';
-    } else{
-    printMessage('Nie znam ruchu o id ' + playerInput + '.');
-    return 'nieznany ruch';
-    }
+    } 
   }
-
-  const argComputerMove = getMoveName(randomNumber),
-        argPlayerMove = getMoveName(playerInput);
-
+  const computerMove = getMoveName(randomNumber),
+        playerMove = getMoveName(playerInput);
 
   const displayResult = function (argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
@@ -44,7 +33,7 @@ function playGame(playerInput){
       printMessage('Tym razem przegrywasz.');
     }
   }
-  displayResult(argComputerMove, argPlayerMove);
+  displayResult(computerMove, playerMove);
 }
 
 document.getElementById('kamień').addEventListener('click', function(){
